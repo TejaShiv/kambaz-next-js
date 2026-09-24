@@ -13,7 +13,7 @@ export default function TOC() {
         <li><Link href="/kambaz" id="wd-kambaz-link">Kambaz</Link></li>
         <li><Link href="/book/ch1" id="wd-toc-book-link">Chapter 1</Link></li>
       </ul>
-      <p>Tejas Shivaprasad — learning full stack, one tag at a time.</p>
+      <p>Tejas Shivaprasad — CS 5610, Fall 2026</p>
     </div>
   );
 }
