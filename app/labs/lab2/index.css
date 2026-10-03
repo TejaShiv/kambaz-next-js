@@ -46,3 +46,23 @@ h2 {
   background-color: purple;
   color: white;
 }
+
+.wd-media-queries-demo {
+  background-color: lightgray;
+  padding: 10px;
+}
+@media (max-width: 600px) {
+  .wd-media-queries-demo {
+    background-color: salmon;
+  }
+}
+@media (min-width: 601px) and (max-width: 1000px) {
+  .wd-media-queries-demo {
+    background-color: lightgreen;
+  }
+}
+@media (min-width: 1001px) {
+  .wd-media-queries-demo {
+    background-color: lightblue;
+  }
+}
