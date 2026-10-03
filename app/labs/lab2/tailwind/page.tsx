@@ -9,10 +9,14 @@ export default function TailwindLab() {
         <div className="px-8 py-2 mt-6 bg-blue-200">
           Horizontal padding 8, vertical padding 2, margin top 6
         </div>
+        <div className="ms-4 me-4 bg-green-200 p-2">
+          Margin start 4 and margin end 4, which respect text direction
+        </div>
       </div>
 
       <div id="wd-tailwind-typography">
         <h3>Typography</h3>
+        <p className="font-thin">Thin weight</p>
         <p className="text-xs">Extra small text</p>
         <p className="text-base font-normal">Base size, normal weight</p>
         <p className="text-2xl font-bold">Large and bold</p>
@@ -35,11 +39,16 @@ export default function TailwindLab() {
         <div className="text-sm md:text-lg lg:text-3xl">
           This text grows at each breakpoint.
         </div>
+        <div className="block md:flex gap-4 mt-4">
+          <div className="bg-orange-200 p-4">Stacked on small screens</div>
+          <div className="bg-orange-300 p-4">Side by side from md up</div>
+        </div>
       </div>
 
       <div id="wd-tailwind-filters">
         <h3>Filters</h3>
-        <div className="bg-purple-500 text-white p-4 blur-sm">Blurred</div>
+        <div className="bg-purple-500 text-white p-4 blur-sm">Small blur</div>
+        <div className="bg-purple-500 text-white p-4 blur-lg">Large blur</div>
         <div className="bg-purple-500 text-white p-4 grayscale">Grayscale</div>
         <div className="bg-purple-500 text-white p-4 opacity-50">Half opacity</div>
         <div className="bg-purple-500 text-white p-4 brightness-150">Brighter</div>
