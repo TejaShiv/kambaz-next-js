@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function CourseCard({
   id,
@@ -18,16 +17,10 @@ export default function CourseCard({
         href={`/courses/${id}/home`}
         className="wd-dashboard-course-link block text-neutral-900 no-underline"
       >
-        <Image
-          src={image}
-          width={300}
-          height={160}
-          alt={title}
-          className="h-40 w-full object-cover"
-        />
+        <img src={image} width={300} height={160} alt={title} className="h-40 w-full object-cover" />
         <div className="p-4">
-          <h5 className="m-0 mb-2 truncate text-lg font-semibold">{title}</h5>
-          <p className="wd-dashboard-course-title m-0 mb-3 h-[60px] overflow-hidden text-sm text-neutral-600">
+          <h5 className="m-0 mb-2 truncate text-lg font-semibold text-red-700">{title}</h5>
+          <p className="wd-dashboard-course-title m-0 mb-3 h-[40px] overflow-hidden text-sm text-neutral-600">
             {subtitle}
           </p>
           <button
