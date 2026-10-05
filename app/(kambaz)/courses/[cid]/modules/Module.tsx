@@ -8,9 +8,12 @@ export default function Module({
   children?: ReactNode;
 }) {
   return (
-    <li className="wd-module">
-      <div className="wd-title">{title}</div>
-      <ul className="wd-lessons">{children}</ul>
+    <li className="wd-module mb-4 border border-gray-300">
+      <div className="wd-title flex items-center justify-between bg-gray-200 p-3 text-lg font-medium">
+        <span>{title}</span>
+        <span className="text-green-700">&#10003;</span>
+      </div>
+      <ul className="wd-lessons list-none p-0">{children}</ul>
     </li>
   );
 }
