@@ -36,6 +36,9 @@ export default function CourseNavigation({ cid }: { cid: string }) {
           </Link>
         );
       })}
+      <span id="wd-course-ai-link" className="px-3 py-2 text-xs text-gray-500">
+        Sample note: the active route gets a left border.
+      </span>
     </div>
   );
 }

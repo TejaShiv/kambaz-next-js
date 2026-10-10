@@ -19,6 +19,9 @@ export default function CourseStatus() {
       <button type="button" className={btn}>New Announcement</button>
       <button type="button" className={btn}>New Analytics</button>
       <button type="button" className={btn}>View Course Notifications</button>
+      <p id="wd-ai-status" className="mt-3 text-xs text-gray-500">
+        Sample note: these actions are placeholders until a later chapter.
+      </p>
     </div>
   );
 }

@@ -14,6 +14,9 @@ export default function Signin() {
       <Link href="/account/signup" id="wd-signup-link" className="text-sm text-red-600">
         Sign up
       </Link>
+      <p id="wd-ai-signin-note" className="mt-3 text-xs text-gray-500">
+        Sample note: credentials are not checked yet.
+      </p>
     </div>
   );
 }

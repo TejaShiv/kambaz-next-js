@@ -56,6 +56,9 @@ export default function KambazNavigation() {
         <FaFlask className="mx-auto text-3xl text-red-600" />
         Labs
       </Link>
+      <p id="wd-ai-nav-help" className="px-2 pt-4 text-center text-[10px] text-gray-400">
+        Sample note: the active tile shows white on red.
+      </p>
     </nav>
   );
 }

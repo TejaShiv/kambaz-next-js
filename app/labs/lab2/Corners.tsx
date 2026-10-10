@@ -2,15 +2,11 @@ export default function Corners() {
   return (
     <div id="wd-css-corners">
       <h3>Corners</h3>
-      <div style={{ border: "3px solid purple", borderRadius: "0px", padding: "10px", marginBottom: "8px" }}>
-        Square corners
-      </div>
-      <div style={{ border: "3px solid purple", borderRadius: "16px", padding: "10px", marginBottom: "8px" }}>
-        Rounded corners
-      </div>
-      <div style={{ border: "3px solid purple", borderRadius: "50%", padding: "10px", width: "120px" }}>
-        Circle
-      </div>
+      <p className="wd-bordered wd-padded wd-margined">Square corners</p>
+      <p className="wd-bordered wd-rounded-corners wd-padded wd-margined">Rounded corners</p>
+      <p id="wd-ai-corners" className="wd-ai-rounded-left wd-margined">
+        Sample paragraph rounded only on the left corners
+      </p>
     </div>
   );
 }

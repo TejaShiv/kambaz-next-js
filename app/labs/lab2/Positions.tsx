@@ -2,25 +2,31 @@ export default function Positions() {
   return (
     <div id="wd-css-positions">
       <h3>Positions</h3>
-      <div
-        id="wd-css-position-relative"
-        style={{ position: "relative", left: "40px", backgroundColor: "lightyellow" }}
-      >
-        Relative, shifted 40px from its normal spot
+
+      <h4>Relative</h4>
+      <div id="wd-css-position-relative" className="wd-pos-relative-nudge wd-dimension-landscape wd-bg-color-green wd-fg-color-white">
+        Relative
       </div>
-      <div style={{ position: "relative", height: "100px", border: "1px solid gray", marginTop: "8px" }}>
-        <div
-          id="wd-css-position-absolute"
-          style={{ position: "absolute", top: "20px", right: "20px", backgroundColor: "lightblue" }}
-        >
-          Absolute, placed against its positioned parent
+      <div id="wd-ai-relative" className="wd-ai-pos-relative-nudge wd-dimension-square wd-bg-color-blue wd-fg-color-white">
+        Sample nudge
+      </div>
+
+      <h4>Absolute</h4>
+      <div style={{ position: "relative", height: "160px" }} className="wd-bordered">
+        <div id="wd-css-position-absolute" className="wd-pos-absolute-tr wd-dimension-square wd-bg-color-red wd-fg-color-white">
+          Top right
+        </div>
+        <div id="wd-ai-absolute" className="wd-ai-pos-absolute-br wd-dimension-square wd-bg-color-green wd-fg-color-white">
+          Bottom right
         </div>
       </div>
-      <div
-        id="wd-css-position-fixed"
-        style={{ position: "fixed", bottom: "10px", right: "10px", backgroundColor: "lightgreen", padding: "4px" }}
-      >
-        Fixed to the viewport
+
+      <h4>Fixed position</h4>
+      <div id="wd-css-position-fixed" className="wd-pos-fixed wd-dimension-square wd-bg-color-blue wd-fg-color-white">
+        Fixed
+      </div>
+      <div id="wd-ai-fixed" className="wd-ai-pos-fixed-badge wd-bg-color-red wd-fg-color-white">
+        Sample badge
       </div>
     </div>
   );

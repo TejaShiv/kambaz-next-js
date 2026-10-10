@@ -107,6 +107,9 @@ export default async function AssignmentEditor({
         </div>
       </div>
 
+      <p id="wd-ai-editor-notes" className="mb-4 text-xs text-gray-500">
+        Sample note: each label is linked to its field with htmlFor.
+      </p>
       <hr className="my-4" />
       <div className="flex justify-end gap-2">
         <Link href={`/courses/${cid}/assignments`} id="wd-cancel"
