@@ -1,11 +1,13 @@
 import Link from "next/link";
+import * as db from "../../../../database";
 
 export default async function AssignmentEditor({
   params,
 }: {
-  params: Promise<{ cid: string }>;
+  params: Promise<{ cid: string; aid: string }>;
 }) {
-  const { cid } = await params;
+  const { cid, aid } = await params;
+  const assignment = db.assignments.find((a) => a._id === aid);
   const field = "w-full rounded border border-gray-400 px-3 py-2 text-sm";
   const label = "mb-1 block text-sm font-medium";
   const row = "mb-4 md:flex md:items-start md:gap-4";
@@ -15,7 +17,7 @@ export default async function AssignmentEditor({
     <div id="wd-assignments-editor" className="max-w-[720px]">
       <div className="mb-4">
         <label htmlFor="wd-name" className={label}>Assignment Name</label>
-        <input id="wd-name" defaultValue="A1 - ENV + HTML" className={field} />
+        <input id="wd-name" defaultValue={assignment?.title ?? ""} className={field} />
       </div>
 
       <div className="mb-4">
@@ -23,13 +25,15 @@ export default async function AssignmentEditor({
           id="wd-description"
           rows={8}
           className={field}
-          defaultValue="The assignment is available online. Submit a link to the landing page of your web application running on Vercel. The landing page should include your full name and section, links to each lab assignment, a link to the Kambaz application, and a link to your GitHub repository."
+          defaultValue={assignment?.description ?? ""}
         />
       </div>
 
       <div className={row}>
         <div className={labelCol}><label htmlFor="wd-points" className={label}>Points</label></div>
-        <div className="flex-1"><input id="wd-points" defaultValue={100} className={field} /></div>
+        <div className="flex-1">
+          <input id="wd-points" defaultValue={assignment?.points ?? 100} className={field} />
+        </div>
       </div>
 
       <div className={row}>
@@ -93,15 +97,15 @@ export default async function AssignmentEditor({
           <label htmlFor="wd-assign-to" className={label}>Assign to</label>
           <input id="wd-assign-to" defaultValue="Everyone" className={`${field} mb-4`} />
           <label htmlFor="wd-due-date" className={label}>Due</label>
-          <input type="date" id="wd-due-date" defaultValue="2026-05-13" className={`${field} mb-4`} />
+          <input type="date" id="wd-due-date" defaultValue={assignment?.due ?? ""} className={`${field} mb-4`} />
           <div className="md:flex md:gap-4">
             <div className="mb-4 flex-1">
               <label htmlFor="wd-available-from" className={label}>Available from</label>
-              <input type="date" id="wd-available-from" defaultValue="2026-05-06" className={field} />
+              <input type="date" id="wd-available-from" defaultValue={assignment?.available ?? ""} className={field} />
             </div>
             <div className="mb-4 flex-1">
               <label htmlFor="wd-available-until" className={label}>Until</label>
-              <input type="date" id="wd-available-until" defaultValue="2026-05-20" className={field} />
+              <input type="date" id="wd-available-until" defaultValue={assignment?.due ?? ""} className={field} />
             </div>
           </div>
         </div>

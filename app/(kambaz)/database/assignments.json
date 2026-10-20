@@ -1,0 +1,10 @@
+[
+  { "_id": "A101", "title": "Propulsion Assignment", "course": "RS101", "description": "Calculate specific impulse for three engine types.", "points": 100, "due": "2026-02-10", "available": "2026-02-01" },
+  { "_id": "A102", "title": "Combustion Lab Report", "course": "RS101", "description": "Write up the combustion chamber experiment.", "points": 100, "due": "2026-03-05", "available": "2026-02-20" },
+  { "_id": "A201", "title": "Airfoil Analysis", "course": "RS102", "description": "Compare lift coefficients across three airfoils.", "points": 100, "due": "2026-02-15", "available": "2026-02-01" },
+  { "_id": "A202", "title": "Wind Tunnel Report", "course": "RS102", "description": "Document your wind tunnel results.", "points": 100, "due": "2026-03-10", "available": "2026-02-25" },
+  { "_id": "A301", "title": "Structural Loads", "course": "RS103", "description": "Model launch loads on a payload fairing.", "points": 100, "due": "2026-02-20", "available": "2026-02-05" },
+  { "_id": "A401", "title": "A1 - ENV + HTML", "course": "CS5610", "description": "Set up the environment and build the HTML prototype.", "points": 100, "due": "2026-09-27", "available": "2026-09-14" },
+  { "_id": "A402", "title": "A2 - CSS + TAILWIND", "course": "CS5610", "description": "Style the prototype with CSS and Tailwind.", "points": 100, "due": "2026-10-11", "available": "2026-09-28" },
+  { "_id": "A403", "title": "A3 - JAVASCRIPT + REACT", "course": "CS5610", "description": "Drive the UI from JSON data.", "points": 100, "due": "2026-10-25", "available": "2026-10-12" }
+]

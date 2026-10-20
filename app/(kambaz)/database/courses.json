@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "RS101",
+    "name": "Rocket Propulsion",
+    "number": "RS4550",
+    "startDate": "2026-01-10",
+    "endDate": "2026-05-15",
+    "department": "D134",
+    "credits": 4,
+    "term": "Spring 2026",
+    "description": "Fundamentals of rocket propulsion, thrust, and orbital mechanics.",
+    "image": "/images/course-react.svg"
+  },
+  {
+    "_id": "RS102",
+    "name": "Aerodynamics",
+    "number": "RS4560",
+    "startDate": "2026-01-10",
+    "endDate": "2026-05-15",
+    "department": "D134",
+    "credits": 3,
+    "term": "Spring 2026",
+    "description": "Airflow, lift, drag, and the behaviour of bodies in motion.",
+    "image": "/images/course-node.svg"
+  },
+  {
+    "_id": "RS103",
+    "name": "Spacecraft Design",
+    "number": "RS4570",
+    "startDate": "2026-01-10",
+    "endDate": "2026-05-15",
+    "department": "D134",
+    "credits": 4,
+    "term": "Spring 2026",
+    "description": "Structures, power systems, and thermal control for spacecraft.",
+    "image": "/images/course-mongo.svg"
+  },
+  {
+    "_id": "CS5610",
+    "name": "Web Development",
+    "number": "CS5610",
+    "startDate": "2026-09-07",
+    "endDate": "2026-12-14",
+    "department": "CS",
+    "credits": 4,
+    "term": "Fall 2026",
+    "description": "Building full stack applications with Next.js, Express, and MongoDB.",
+    "image": "/images/course-webdev.svg"
+  }
+]

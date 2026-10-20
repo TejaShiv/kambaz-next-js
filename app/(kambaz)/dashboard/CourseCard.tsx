@@ -1,32 +1,29 @@
 import Link from "next/link";
 
 export default function CourseCard({
-  id,
-  title,
-  subtitle,
+  _id,
+  name,
+  description,
   image,
 }: {
-  id: string;
-  title: string;
-  subtitle: string;
+  _id: string;
+  name: string;
+  description: string;
   image: string;
 }) {
   return (
     <div className="wd-dashboard-course w-[300px] max-w-full overflow-hidden rounded border border-neutral-300 shadow-sm">
       <Link
-        href={`/courses/${id}/home`}
+        href={`/courses/${_id}/home`}
         className="wd-dashboard-course-link block text-neutral-900 no-underline"
       >
-        <img src={image} width={300} height={160} alt={title} className="h-40 w-full object-cover" />
+        <img src={image} width={300} height={160} alt={name} className="h-40 w-full object-cover" />
         <div className="p-4">
-          <h5 className="m-0 mb-2 truncate text-lg font-semibold text-red-700">{title}</h5>
+          <h5 className="m-0 mb-2 truncate text-lg font-semibold text-red-700">{name}</h5>
           <p className="wd-dashboard-course-title m-0 mb-3 h-[40px] overflow-hidden text-sm text-neutral-600">
-            {subtitle}
+            {description}
           </p>
-          <button
-            type="button"
-            className="inline-flex items-center justify-center rounded bg-red-600 px-4 py-2 text-sm text-white"
-          >
+          <button type="button" className="rounded bg-red-600 px-4 py-2 text-sm text-white">
             Go
           </button>
         </div>

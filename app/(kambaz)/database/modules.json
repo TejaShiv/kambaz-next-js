@@ -1,0 +1,42 @@
+[
+  { "_id": "M101", "name": "Introduction to Rocket Propulsion", "description": "Basic concepts and terminology", "course": "RS101",
+    "lessons": [
+      { "_id": "L101", "name": "History of Rocketry", "description": "Early rockets to modern launch vehicles", "module": "M101" },
+      { "_id": "L102", "name": "Thrust and Specific Impulse", "description": "How engines produce force", "module": "M101" }
+    ]
+  },
+  { "_id": "M102", "name": "Propellants", "description": "Solid, liquid, and hybrid fuels", "course": "RS101",
+    "lessons": [
+      { "_id": "L103", "name": "Solid Propellants", "description": "Composition and burn rates", "module": "M102" },
+      { "_id": "L104", "name": "Liquid Propellants", "description": "Cryogenics and storables", "module": "M102" }
+    ]
+  },
+  { "_id": "M201", "name": "Fundamentals of Aerodynamics", "description": "Airflow and pressure", "course": "RS102",
+    "lessons": [
+      { "_id": "L201", "name": "Bernoulli and Continuity", "description": "Conservation laws in fluids", "module": "M201" },
+      { "_id": "L202", "name": "Lift and Drag", "description": "Forces on an airfoil", "module": "M201" }
+    ]
+  },
+  { "_id": "M301", "name": "Spacecraft Structures", "description": "Loads and materials", "course": "RS103",
+    "lessons": [
+      { "_id": "L301", "name": "Launch Loads", "description": "Vibration and acceleration", "module": "M301" }
+    ]
+  },
+  { "_id": "M401", "name": "HTML and the Web", "description": "Markup, tags, and structure", "course": "CS5610",
+    "lessons": [
+      { "_id": "L401", "name": "Heading and Paragraph Tags", "description": "Structuring text content", "module": "M401" },
+      { "_id": "L402", "name": "Forms and Tables", "description": "Collecting and displaying data", "module": "M401" }
+    ]
+  },
+  { "_id": "M402", "name": "CSS and Tailwind", "description": "Styling user interfaces", "course": "CS5610",
+    "lessons": [
+      { "_id": "L403", "name": "Selectors and Specificity", "description": "Which rule wins", "module": "M402" },
+      { "_id": "L404", "name": "Flex and Grid", "description": "Modern layout", "module": "M402" }
+    ]
+  },
+  { "_id": "M403", "name": "JavaScript", "description": "Language fundamentals", "course": "CS5610",
+    "lessons": [
+      { "_id": "L405", "name": "Arrays and Map", "description": "Transforming collections", "module": "M403" }
+    ]
+  }
+]

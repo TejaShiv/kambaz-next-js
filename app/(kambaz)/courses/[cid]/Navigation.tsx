@@ -3,42 +3,39 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function CourseNavigation({ cid }: { cid: string }) {
-  const pathname = usePathname();
-  const links = [
-    { label: "Home", slug: "home", id: "wd-course-home-link" },
-    { label: "Modules", slug: "modules", id: "wd-course-modules-link" },
-    { label: "Piazza", slug: "piazza", id: "wd-course-piazza-link" },
-    { label: "Zoom", slug: "zoom", id: "wd-course-zoom-link" },
-    { label: "Assignments", slug: "assignments", id: "wd-course-assignments-link" },
-    { label: "Quizzes", slug: "quizzes", id: "wd-course-quizzes-link" },
-    { label: "Grades", slug: "grades", id: "wd-course-grades-link" },
-    { label: "People", slug: "people/table", id: "wd-course-people-link" },
-  ];
+const LINKS = [
+  { segment: "home", id: "wd-course-home-link", label: "Home" },
+  { segment: "modules", id: "wd-course-modules-link", label: "Modules" },
+  { segment: "piazza", id: "wd-course-piazza-link", label: "Piazza" },
+  { segment: "zoom", id: "wd-course-zoom-link", label: "Zoom" },
+  { segment: "assignments", id: "wd-course-assignments-link", label: "Assignments" },
+  { segment: "quizzes", id: "wd-course-quizzes-link", label: "Quizzes" },
+  { segment: "grades", id: "wd-course-grades-link", label: "Grades" },
+  { segment: "people/table", id: "wd-course-people-link", label: "People" },
+];
 
+export default function CourseNavigation({ cid }: { cid: string }) {
+  const pathname = usePathname() ?? "";
   return (
     <div id="wd-courses-navigation" className="flex w-[160px] flex-col">
-      {links.map((l) => {
-        const href = `/courses/${cid}/${l.slug}`;
+      {LINKS.map(({ segment, id, label }) => {
+        const href = `/courses/${cid}/${segment}`;
         const active = pathname === href;
         return (
           <Link
-            key={l.id}
+            key={id}
             href={href}
-            id={l.id}
+            id={id}
             className={`border-l-4 px-3 py-2 text-base no-underline ${
               active
                 ? "border-black font-medium text-black"
                 : "border-transparent text-red-600"
             }`}
           >
-            {l.label}
+            {label}
           </Link>
         );
       })}
-      <span id="wd-course-ai-link" className="px-3 py-2 text-xs text-gray-500">
-        Sample note: the active route gets a left border.
-      </span>
     </div>
   );
 }

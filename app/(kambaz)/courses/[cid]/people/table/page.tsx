@@ -1,13 +1,16 @@
 import { FaUserCircle } from "react-icons/fa";
+import * as db from "../../../../database";
 
-export default function PeopleTable() {
-  const people = [
-    { first: "Tony", last: "Stark", id: "001234561S", role: "STUDENT", email: "stark@northeastern.edu" },
-    { first: "Bruce", last: "Wayne", id: "001234562S", role: "STUDENT", email: "wayne@northeastern.edu" },
-    { first: "Steve", last: "Rogers", id: "001234563S", role: "TA", email: "rogers@northeastern.edu" },
-    { first: "Natasha", last: "Romanoff", id: "001234564S", role: "STUDENT", email: "romanoff@northeastern.edu" },
-    { first: "Peter", last: "Parker", id: "001234565S", role: "STUDENT", email: "parker@northeastern.edu" },
-  ];
+export default async function PeopleTable({
+  params,
+}: {
+  params: Promise<{ cid: string }>;
+}) {
+  const { cid } = await params;
+  const enrolledIds = db.enrollments
+    .filter((e) => e.course === cid)
+    .map((e) => e.user);
+  const people = db.users.filter((u) => enrolledIds.includes(u._id));
 
   return (
     <div id="wd-people-table">
@@ -23,18 +26,18 @@ export default function PeopleTable() {
           </tr>
         </thead>
         <tbody>
-          {people.map((p, i) => (
-            <tr key={p.id} className={i % 2 === 1 ? "bg-gray-50" : ""}>
+          {people.map((person, i) => (
+            <tr key={person._id} className={i % 2 === 1 ? "bg-gray-50" : ""}>
               <td className="p-2 whitespace-nowrap">
                 <FaUserCircle className="mr-2 inline-block text-xl text-gray-500" />
                 <span className="font-medium text-red-700">
-                  {p.first} {p.last}
+                  {person.firstName} {person.lastName}
                 </span>
               </td>
-              <td className="p-2">{p.id}</td>
-              <td className="p-2">S101</td>
-              <td className="p-2">{p.role}</td>
-              <td className="p-2">{p.email}</td>
+              <td className="p-2">{person.loginId}</td>
+              <td className="p-2">{person.section}</td>
+              <td className="p-2">{person.role}</td>
+              <td className="p-2">{person.lastActivity}</td>
             </tr>
           ))}
         </tbody>

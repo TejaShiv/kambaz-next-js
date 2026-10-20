@@ -1,0 +1,9 @@
+[
+  { "_id": "U001", "username": "amorales", "firstName": "Ana", "lastName": "Morales", "email": "morales@kambaz.com", "role": "STUDENT", "loginId": "001234561S", "section": "S101", "lastActivity": "2026-09-01" },
+  { "_id": "U002", "username": "dokafor", "firstName": "Daniel", "lastName": "Okafor", "email": "okafor@kambaz.com", "role": "STUDENT", "loginId": "001234562S", "section": "S101", "lastActivity": "2026-09-02" },
+  { "_id": "U003", "username": "lchen", "firstName": "Lin", "lastName": "Chen", "email": "chen@kambaz.com", "role": "TA", "loginId": "001234563S", "section": "S101", "lastActivity": "2026-09-03" },
+  { "_id": "U004", "username": "pnair", "firstName": "Priya", "lastName": "Nair", "email": "nair@kambaz.com", "role": "STUDENT", "loginId": "001234564S", "section": "S102", "lastActivity": "2026-09-04" },
+  { "_id": "U005", "username": "mkowalski", "firstName": "Marek", "lastName": "Kowalski", "email": "kowalski@kambaz.com", "role": "STUDENT", "loginId": "001234565S", "section": "S102", "lastActivity": "2026-09-05" },
+  { "_id": "U006", "username": "tejas", "firstName": "Tejas", "lastName": "Shivaprasad", "email": "shivaprasad.t@northeastern.edu", "role": "STUDENT", "loginId": "002537354S", "section": "S02", "lastActivity": "2026-10-21" },
+  { "_id": "U007", "username": "jannunzi", "firstName": "Jose", "lastName": "Annunziato", "email": "annunziato@kambaz.com", "role": "FACULTY", "loginId": "001000001F", "section": "S02", "lastActivity": "2026-10-20" }
+]

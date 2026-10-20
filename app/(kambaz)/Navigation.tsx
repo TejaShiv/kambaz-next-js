@@ -5,13 +5,23 @@ import { usePathname } from "next/navigation";
 import { AiOutlineDashboard } from "react-icons/ai";
 import { FaRegCircleUser, FaBook, FaRegCalendar, FaInbox, FaFlask } from "react-icons/fa6";
 
-export default function KambazNavigation() {
-  const pathname = usePathname();
-  const accountActive = pathname.startsWith("/account");
-  const tile = "block py-3 text-center text-sm no-underline";
-  const idle = "bg-black text-white";
-  const on = "bg-white text-red-600";
+const LINKS = [
+  { href: "/account", id: "wd-account-link", label: "Account", Icon: FaRegCircleUser,
+    match: (p: string) => p.startsWith("/account") },
+  { href: "/dashboard", id: "wd-dashboard-link", label: "Dashboard", Icon: AiOutlineDashboard,
+    match: (p: string) => p === "/dashboard" },
+  { href: "/dashboard", id: "wd-course-link", label: "Courses", Icon: FaBook,
+    match: (p: string) => p.startsWith("/courses") },
+  { href: "/calendar", id: "wd-calendar-link", label: "Calendar", Icon: FaRegCalendar,
+    match: (p: string) => p === "/calendar" },
+  { href: "/inbox", id: "wd-inbox-link", label: "Inbox", Icon: FaInbox,
+    match: (p: string) => p === "/inbox" },
+  { href: "/labs", id: "wd-labs-link", label: "Labs", Icon: FaFlask,
+    match: (p: string) => p.startsWith("/labs") },
+];
 
+export default function KambazNavigation() {
+  const pathname = usePathname() ?? "";
   return (
     <nav
       id="wd-kambaz-navigation"
@@ -26,36 +36,26 @@ export default function KambazNavigation() {
       >
         Northeastern
       </a>
-
-      <Link href="/account" id="wd-account-link" className={`${tile} ${accountActive ? on : idle}`}>
-        <FaRegCircleUser className={`mx-auto text-3xl ${accountActive ? "text-red-600" : "text-white"}`} />
-        Account
-      </Link>
-
-      <Link href="/dashboard" id="wd-dashboard-link" className={`${tile} ${pathname === "/dashboard" ? on : idle}`}>
-        <AiOutlineDashboard className="mx-auto text-3xl text-red-600" />
-        Dashboard
-      </Link>
-
-      <Link href="/dashboard" id="wd-course-link" className={`${tile} ${pathname.startsWith("/courses") ? on : idle}`}>
-        <FaBook className="mx-auto text-3xl text-red-600" />
-        Courses
-      </Link>
-
-      <Link href="/calendar" id="wd-calendar-link" className={`${tile} ${pathname === "/calendar" ? on : idle}`}>
-        <FaRegCalendar className="mx-auto text-3xl text-red-600" />
-        Calendar
-      </Link>
-
-      <Link href="/inbox" id="wd-inbox-link" className={`${tile} ${pathname === "/inbox" ? on : idle}`}>
-        <FaInbox className="mx-auto text-3xl text-red-600" />
-        Inbox
-      </Link>
-
-      <Link href="/labs" id="wd-labs-link" className={`${tile} ${pathname.startsWith("/labs") ? on : idle}`}>
-        <FaFlask className="mx-auto text-3xl text-red-600" />
-        Labs
-      </Link>
+      {LINKS.map(({ href, id, label, Icon, match }) => {
+        const active = match(pathname);
+        return (
+          <Link
+            key={id}
+            href={href}
+            id={id}
+            className={`block py-3 text-center text-sm no-underline ${
+              active ? "bg-white text-red-600" : "bg-black text-white"
+            }`}
+          >
+            <Icon
+              className={`mx-auto text-3xl ${
+                id === "wd-account-link" && !active ? "text-white" : "text-red-600"
+              }`}
+            />
+            {label}
+          </Link>
+        );
+      })}
       <p id="wd-ai-nav-help" className="px-2 pt-4 text-center text-[10px] text-gray-400">
         Sample note: the active tile shows white on red.
       </p>
