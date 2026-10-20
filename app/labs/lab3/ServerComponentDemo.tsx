@@ -19,7 +19,7 @@ export default function ServerComponentDemo() {
       <h5>Server Information</h5>
       platform = {platform}
       <br />
-      arch = {arch}
+      arch: {arch}
       <br />
       nodeVersion = {nodeVersion}
       <br />
