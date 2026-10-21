@@ -17,7 +17,7 @@ const LINKS = [
 export default function CourseNavigation({ cid }: { cid: string }) {
   const pathname = usePathname() ?? "";
   return (
-    <div id="wd-courses-navigation" className="flex w-[160px] flex-col">
+    <div id="wd-courses-navigation" className="hidden w-[150px] shrink-0 flex-col sm:flex">
       {LINKS.map(({ segment, id, label }) => {
         const href = `/courses/${cid}/${segment}`;
         const active = pathname === href;
@@ -26,16 +26,19 @@ export default function CourseNavigation({ cid }: { cid: string }) {
             key={id}
             href={href}
             id={id}
-            className={`border-l-4 px-3 py-2 text-base no-underline ${
+            className={
               active
-                ? "border-black font-medium text-black"
-                : "border-transparent text-red-600"
-            }`}
+                ? "border-l-[3px] border-black px-3 py-1.5 text-[15px] font-semibold text-black no-underline"
+                : "border-l-[3px] border-transparent px-3 py-1.5 text-[15px] text-red-600 no-underline transition-colors hover:border-neutral-300 hover:bg-neutral-50"
+            }
           >
             {label}
           </Link>
         );
       })}
+      <span id="wd-course-ai-link" className="mt-3 px-3 text-[11px] leading-tight text-neutral-400">
+        Active route gets a left border.
+      </span>
     </div>
   );
 }

@@ -11,13 +11,19 @@ export default async function CoursesLayout({
   const course = courses.find((c) => c._id === cid);
   return (
     <div id="wd-courses">
-      <h2 className="text-2xl font-semibold text-red-600">
-        <Breadcrumb course={course} />
-      </h2>
-      <hr className="my-3" />
-      <div className="flex gap-6">
+      <header className="border-b border-neutral-200 pb-3">
+        <h2 className="m-0 text-xl font-semibold text-red-700">
+          <Breadcrumb course={course} />
+        </h2>
+        {course && (
+          <p className="m-0 mt-1 text-sm text-neutral-500">
+            {course.number} &middot; {course.term} &middot; {course.credits} credits
+          </p>
+        )}
+      </header>
+      <div className="flex gap-6 pt-4">
         <CourseNavigation cid={cid} />
-        <div className="flex-1">{children}</div>
+        <div className="min-w-0 flex-1">{children}</div>
       </div>
     </div>
   );

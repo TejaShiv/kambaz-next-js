@@ -25,16 +25,16 @@ export default function KambazNavigation() {
   return (
     <nav
       id="wd-kambaz-navigation"
-      className="fixed bottom-0 top-0 z-20 hidden w-[120px] flex-col bg-black md:flex"
+      className="fixed bottom-0 top-0 z-20 hidden w-[88px] flex-col overflow-y-auto bg-black md:flex"
     >
       <a
         href="https://www.northeastern.edu/"
         id="wd-neu-link"
         target="_blank"
         rel="noreferrer"
-        className="block py-4 text-center text-xs text-red-600 no-underline"
+        className="flex h-[76px] items-center justify-center text-base font-bold tracking-tight text-red-600 no-underline"
       >
-        Northeastern
+        NU
       </a>
       {LINKS.map(({ href, id, label, Icon, match }) => {
         const active = match(pathname);
@@ -43,21 +43,25 @@ export default function KambazNavigation() {
             key={id}
             href={href}
             id={id}
-            className={`block py-3 text-center text-sm no-underline ${
-              active ? "bg-white text-red-600" : "bg-black text-white"
-            }`}
+            className={
+              active
+                ? "flex flex-col items-center gap-1 bg-white px-1 py-2.5 text-[11px] font-medium text-red-600 no-underline"
+                : "flex flex-col items-center gap-1 px-1 py-2.5 text-[11px] text-white no-underline transition-colors hover:bg-neutral-800"
+            }
           >
             <Icon
-              className={`mx-auto text-3xl ${
-                id === "wd-account-link" && !active ? "text-white" : "text-red-600"
-              }`}
+              className={
+                id === "wd-account-link" && !active
+                  ? "text-[22px] text-white"
+                  : "text-[22px] text-red-600"
+              }
             />
-            {label}
+            <span className="leading-tight">{label}</span>
           </Link>
         );
       })}
-      <p id="wd-ai-nav-help" className="px-2 pt-4 text-center text-[10px] text-gray-400">
-        Sample note: the active tile shows white on red.
+      <p id="wd-ai-nav-help" className="mt-auto px-2 py-3 text-center text-[9px] leading-tight text-neutral-500">
+        Active tile shows white on red.
       </p>
     </nav>
   );
