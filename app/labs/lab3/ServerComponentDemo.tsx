@@ -12,24 +12,19 @@ export default function ServerComponentDemo() {
     files = fs.readdirSync(lab3Dir);
   } catch (error) {
     console.error("Error reading lab3 directory:", error);
+    files = [];
   }
   return (
     <div id="wd-server-component-demo">
       <h4>Server Component Demo</h4>
+      <h5>Server Render Time</h5>
+      <p>Rendered on server at: {serverRenderTime}</p>
       <h5>Server Information</h5>
-      platform = {platform}
-      <br />
-      &quot;arch&quot;: {arch}
-      <br />
-      nodeVersion = {nodeVersion}
-      <br />
-      serverRenderTime = {serverRenderTime}
-      <h5>Files read on the server</h5>
-      <ul>
-        {files.slice(0, 8).map((file) => (
-          <li key={file}>{file}</li>
-        ))}
-      </ul>
+      <pre>
+        {JSON.stringify({ platform, arch, nodeVersion, serverRenderTime }, null, 2)}
+      </pre>
+      <h5>Filesystem Access Demo</h5>
+      <pre>{JSON.stringify(files, null, 2)}</pre>
       <hr />
     </div>
   );
