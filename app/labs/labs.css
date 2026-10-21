@@ -144,3 +144,12 @@ main.wd-labs-content button {
 main.wd-labs-content button:hover {
   background: #f3f4f6;
 }
+
+main.wd-labs-content > div > div {
+  overflow-x: auto;
+}
+
+main.wd-labs-content > div > h2 {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
