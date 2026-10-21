@@ -1,0 +1,11 @@
+main.wd-labs-content h2 { font-size: 1.875rem; font-weight: 700; margin-bottom: 1rem; }
+main.wd-labs-content h3 { font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; }
+main.wd-labs-content h4 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+main.wd-labs-content h5 { font-size: 1.125rem; font-weight: 500; margin-top: 1rem; margin-bottom: 0.25rem; }
+main.wd-labs-content p { margin: 0.5rem 0; }
+main.wd-labs-content hr { margin: 1.5rem 0; border-color: #e5e5e5; }
+main.wd-labs-content ol { list-style: decimal; margin: 0.5rem 0 0.5rem 1.5rem; }
+main.wd-labs-content ul { list-style: disc; margin: 0.5rem 0 0.5rem 1.5rem; }
+main.wd-labs-content pre { background: #f5f5f5; padding: 0.75rem; border-radius: 4px; overflow-x: auto; font-size: 0.875rem; margin: 0.75rem 0; }
+main.wd-labs-content table { margin: 0.75rem 0; }
+main.wd-labs-content a { color: #1d4ed8; text-decoration: underline; }

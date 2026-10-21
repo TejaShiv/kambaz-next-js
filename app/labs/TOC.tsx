@@ -18,20 +18,17 @@ export default function TOC() {
   const pathname = usePathname() ?? "";
   return (
     <div id="wd-toc">
-      <ul className="list-none p-0">
+      <p className="mb-2 px-2 text-xs font-semibold uppercase text-neutral-500">Labs</p>
+      <ul className="m-0 list-none p-0">
         {LINKS.map((link) => {
           const active = pathname === link.href;
           return (
-            <li key={link.id}>
+            <li key={link.id} className="mb-0.5">
               <Link
                 href={link.href}
                 id={link.id}
                 aria-current={active ? "page" : undefined}
-                className={
-                  active
-                    ? "block rounded bg-blue-600 px-2 py-1 font-bold text-white no-underline"
-                    : "block px-2 py-1 text-blue-700"
-                }
+                className={active ? "block rounded bg-red-600 px-3 py-1.5 text-sm font-semibold text-white no-underline" : "block rounded px-3 py-1.5 text-sm text-neutral-700 no-underline hover:bg-neutral-200"}
               >
                 {link.label}
               </Link>
@@ -39,7 +36,7 @@ export default function TOC() {
           );
         })}
       </ul>
-      <p className="px-2 text-xs">Tejas Shivaprasad — CS 5610, Fall 2026</p>
+      <p className="mt-4 border-t border-neutral-200 px-3 pt-3 text-xs text-neutral-500">Tejas Shivaprasad, CS 5610 Fall 2026</p>
     </div>
   );
 }
