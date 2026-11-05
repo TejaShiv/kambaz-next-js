@@ -88,33 +88,12 @@ export default function Dashboard() {
         className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
       >
         {courses.map((c) => (
-          <div key={c._id}>
-            <CourseCard {...c} />
-            <div className="mt-2">
-              <button
-                type="button"
-                id="wd-edit-course-click"
-                className="mr-2 rounded border border-gray-400 px-3 py-1 text-sm"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setCourse(c);
-                }}
-              >
-                Edit
-              </button>
-              <button
-                type="button"
-                id="wd-delete-course-click"
-                className="rounded bg-red-600 px-3 py-1 text-sm text-white"
-                onClick={(e) => {
-                  e.preventDefault();
-                  deleteCourse(c._id);
-                }}
-              >
-                Delete
-              </button>
-            </div>
-          </div>
+          <CourseCard
+            key={c._id}
+            course={c}
+            onEdit={setCourse}
+            onDelete={deleteCourse}
+          />
         ))}
       </div>
     </div>
