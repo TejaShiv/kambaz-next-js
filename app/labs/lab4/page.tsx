@@ -8,6 +8,9 @@ import StringStateVariables from "./StringStateVariables";
 import DateStateVariable from "./DateStateVariable";
 import ObjectStateVariable from "./ObjectStateVariable";
 import ArrayStateVariable from "./ArrayStateVariable";
+import TodoList from "./todos/TodoList";
+import ReduxTodoList from "./redux/todos/ReduxTodoList";
+import EncodingParametersInURLs from "./EncodingParametersInURLs";
 
 export default function Lab4() {
   return (
@@ -23,6 +26,9 @@ export default function Lab4() {
         <DateStateVariable />
         <ObjectStateVariable />
         <ArrayStateVariable />
+        <TodoList />
+        <ReduxTodoList />
+        <EncodingParametersInURLs />
       </div>
     </ReduxProvider>
   );
