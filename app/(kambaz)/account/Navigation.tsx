@@ -2,14 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useAccountContext } from "./AccountContext";
 
 export default function AccountNavigation() {
-  const pathname = usePathname();
-  const links = [
-    { label: "Signin", href: "/account/signin" },
-    { label: "Signup", href: "/account/signup" },
-    { label: "Profile", href: "/account/profile" },
-  ];
+  const pathname = usePathname() ?? "";
+  const { currentUser } = useAccountContext();
+  const links = currentUser
+    ? [{ label: "Profile", href: "/account/profile" }]
+    : [
+        { label: "Signin", href: "/account/signin" },
+        { label: "Signup", href: "/account/signup" },
+      ];
   return (
     <div id="wd-account-navigation" className="flex w-[140px] flex-col">
       {links.map((l) => (
